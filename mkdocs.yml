@@ -1,10 +1,10 @@
 site_name: asyNc 新闻检索系统
 site_description: 关于 asyNc 新闻检索系统的说明文档
 site_author: 刘铠铭 尚子智 宋曦轩 王博文 郑友捷
-# site_url: https://cyent.github.io/markdown-with-mkdocs-material/
+site_url: https://kming-l.github.io/asyNc-docs/
 
-# repo_name: 'cyent/markdown-with-mkdocs-material'
-# repo_url: 'https://github.com/cyent/markdown-with-mkdocs-material'
+repo_name: 'KMing-L/asyNc-docs'
+repo_url: 'https://github.com/KMing-L/asyNc-docs'
 
 theme:
   name: material

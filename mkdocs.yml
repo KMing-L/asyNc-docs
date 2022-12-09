@@ -1,0 +1,71 @@
+site_name: asyNc 新闻检索系统
+site_description: 关于 asyNc 新闻检索系统的说明文档
+site_author: 刘铠铭 尚子智 宋曦轩 王博文 郑友捷
+# site_url: https://cyent.github.io/markdown-with-mkdocs-material/
+
+# repo_name: 'cyent/markdown-with-mkdocs-material'
+# repo_url: 'https://github.com/cyent/markdown-with-mkdocs-material'
+
+theme:
+  name: material
+  palette: 
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: slate
+      primary: black
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  feature:
+    tabs: false
+  logo: assets/avatar.png
+  favicon: images/asyNc.png
+  language: zh
+extra:
+  search:
+    language: 'jp'
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+nav:
+  - 概述: index.md
+  - 体系结构设计: structure.md
+  - 模块间主要接口设计:
+    - 用户相关: api/user.md
+    - 新闻相关: api/news.md
+  - 各模块主要设计:
+    - 爬虫: modules/spider.md
+    - 检索: modules/search.md
+    - 前端: modules/frontend.md
+    - AI: modules/ai.md
+    - Django 后端: modules/django.md
+  - 数据库设计: database.md

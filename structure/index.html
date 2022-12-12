@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-async" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -286,16 +286,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#_2" class="md-nav__link">
+    按模块划分
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#_3" class="md-nav__link">
+    按功能划分
   </a>
+  
+    <nav class="md-nav" aria-label="按功能划分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    新闻爬取相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    新闻展示相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    新闻检索相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    用户相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    其他
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -515,16 +556,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#_2" class="md-nav__link">
+    按模块划分
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#_3" class="md-nav__link">
+    按功能划分
   </a>
+  
+    <nav class="md-nav" aria-label="按功能划分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    新闻爬取相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    新闻展示相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    新闻检索相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    用户相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    其他
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -548,21 +630,43 @@
   </a>
 
 
-<h1 id="welcome-to-async">Welcome to asyNc<a class="headerlink" href="#welcome-to-async" title="Permanent link">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<h1 id="_1">系统架构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">按模块划分<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>我们采用模块化设计，将整个系统分为【Django 后端，AI 模块，Pylucene 模块，Vue 前端，Scrapy 爬虫】五部分，并尽可能减少模块间的耦合，最终得到了如下架构：</p>
+<p><img alt="整体架构" src="../images/%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84.jpg" /></p>
+<h2 id="_3">按功能划分<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在本章节中，我们将展示在不同功能中各模块如何实现通信：</p>
+<h3 id="_4">新闻爬取相关<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><img alt="新闻爬取相关" src="../images/%E6%96%B0%E9%97%BB%E7%88%AC%E5%8F%96%E7%9B%B8%E5%85%B3.jpg" /></p>
+<h3 id="_5">新闻展示相关<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>TODO:</p>
+<p>负责人：*wbw &amp; sxx</p>
+<ol>
+<li>主页新闻展示：Vue 和 Django 交互 &amp; Django 缓存</li>
+<li>个性化新闻展示：Vue &amp; Django &amp; Pylucene（应包含用户登录检查）</li>
+</ol>
+<h3 id="_6">新闻检索相关<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>TODO：</p>
+<p>责任负责人：*szz</p>
+<ol>
+<li>Vue 和 Django/Pylucene 交互</li>
+<li>ES 搜索建议</li>
+<li>Pylucene 检索逻辑</li>
+</ol>
+<h3 id="_7">用户相关<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>TODO：</p>
+<p>责任负责人：*wbw</p>
+<ol>
+<li>注册，登录，修改信息：Vue &amp; Django</li>
+<li>用户点击新闻后 tags 变化</li>
+</ol>
+<h3 id="_8">其他<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>TODO：</p>
+<p>责任负责人：*sxx &amp; wbw</p>
+<ol>
+<li>收藏，稍后再看，历史：Vue &amp; Django</li>
+<li>AI 智能摘要</li>
+</ol>
 
 
 

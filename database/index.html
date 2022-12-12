@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -387,10 +392,57 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          数据库设计
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         数据库设计
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    新闻数据库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    用户数据库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    索引数据库
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -413,6 +465,37 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    新闻数据库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    用户数据库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    索引数据库
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -432,9 +515,30 @@
   </a>
 
 
-  <h1>数据库设计</h1>
-
-
+<h1 id="_1">数据库设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">新闻数据库<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>使用 PostgreSQL，设计了如下表结构：</p>
+<div class="highlight"><pre><span></span><code><span class="w">                                        </span><span class="k">Table</span><span class="w"> </span><span class="ss">&quot;public.news&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="k">Column</span><span class="w">     </span><span class="o">|</span><span class="w">           </span><span class="k">Type</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="k">Collation</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Nullable</span><span class="w"> </span><span class="o">|</span><span class="w">             </span><span class="k">Default</span><span class="w">              </span>
+<span class="c1">---------------+--------------------------+-----------+----------+----------------------------------</span>
+<span class="w"> </span><span class="n">id</span><span class="w">            </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">                  </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;news_id_seq&#39;</span><span class="p">::</span><span class="n">regclass</span><span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="n">news_url</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="nb">text</span><span class="w">                     </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">media</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">category</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">tags</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">30</span><span class="p">)[]</span><span class="w">  </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">title</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="w">   </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">description</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="nb">text</span><span class="w">                     </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">content</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="nb">text</span><span class="w">                     </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">first_img_url</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">text</span><span class="w">                     </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">pub_time</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">time</span><span class="w"> </span><span class="k">zone</span><span class="w"> </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="n">Indexes</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="ss">&quot;news_pkey&quot;</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"> </span><span class="n">btree</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="ss">&quot;news_news_url_key&quot;</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="p">,</span><span class="w"> </span><span class="n">btree</span><span class="w"> </span><span class="p">(</span><span class="n">news_url</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_3">用户数据库<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>TODO：*sxx</p>
+<h2 id="_4">索引数据库<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>TODO：*szz</p>
 
 
 

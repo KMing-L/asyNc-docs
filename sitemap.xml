@@ -6,22 +6,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://kming-l.github.io/asyNc-docs/api/</loc>
+         <lastmod>2022-12-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://kming-l.github.io/asyNc-docs/database/</loc>
          <lastmod>2022-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://kming-l.github.io/asyNc-docs/structure/</loc>
-         <lastmod>2022-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://kming-l.github.io/asyNc-docs/api/news/</loc>
-         <lastmod>2022-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://kming-l.github.io/asyNc-docs/api/user/</loc>
          <lastmod>2022-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>

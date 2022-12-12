@@ -8,6 +8,26 @@ repo_url: 'https://github.com/KMing-L/asyNc-docs'
 
 theme:
   name: material
+  features:
+    # - announce.dismiss
+    - content.code.annotate
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
   palette: 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -24,14 +44,14 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-  feature:
-    tabs: false
   logo: assets/avatar.png
   favicon: images/asyNc.png
   language: zh
+
 extra:
   search:
     language: 'jp'
+
 markdown_extensions:
   - admonition
   - codehilite:
@@ -48,8 +68,7 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.emoji
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
@@ -57,14 +76,16 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist
   - pymdownx.tilde
+
 nav:
   - 概述: index.md
   - 体系结构设计: structure.md
-  - 模块间主要接口设计: api.md
-  - 各模块主要设计:
-    - 爬虫: modules/spider.md
-    - 检索: modules/search.md
-    - 前端: modules/frontend.md
-    - AI: modules/ai.md
-    - Django 后端: modules/django.md
-  - 数据库设计: database.md
+  - 模块设计:
+    - 数据库设计: modules/database.md
+    - 模块间主要接口设计: modules/api.md
+    - 各模块主要设计:
+      - 爬虫: modules/spider.md
+      - 检索: modules/search.md
+      - 前端: modules/frontend.md
+      - AI: modules/ai.md
+      - Django 后端: modules/django.md

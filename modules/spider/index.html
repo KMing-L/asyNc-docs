@@ -898,6 +898,7 @@
 </ol>
 <h2 id="_7">实现<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="item">item<a class="headerlink" href="#item" title="Permanent link">&para;</a></h3>
+<p>实现类：<code>class NewsCrawlerItem(scrapy.Item)</code></p>
 <p>对每一条新闻，记录如下条目：</p>
 <ul>
 <li>news_url: 新闻网址</li>
@@ -911,6 +912,7 @@
 <li>pub_time: 发布时间</li>
 </ul>
 <h3 id="pipeline">pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h3>
+<p>核心实现类：<code>class SQLPipeline()</code></p>
 <p>对每一个爬取到的 item，我们设计了统一的流水线进行处理，该流水线完成如下功能：</p>
 <ol>
 <li>利用事先写好的去重类 <code>class Deduplicate()</code> 进行去重，若新闻重复则忽略该条新闻。</li>
@@ -941,7 +943,7 @@
 <p>所有增量爬虫实现逻辑基本相同，在此统一进行说明：</p>
 <ul>
 <li>在 web_news_config.json 中写入待监视网络请求。</li>
-<li>每类增量爬虫在开启时可附加 main 属性，需额外负责监视 redis 内对应数据库中的网络请求是否为空，若为空则重新向 redis 数据库中加入相应的网络请求 url。<ul>
+<li>每类增量爬虫在开启时可附加 main 属性，需额外创建 <code>IncrementTimer</code> 类，负责监视 redis 内对应数据库中的网络请求是否为空，若为空则重新向 redis 数据库中加入相应的网络请求 url。<ul>
 <li>redis 数据库命名：若爬取新闻站点为 Tencent，则相应的数据库命名为 <code>TencentNewsIncre:start_urls</code>，其他增量爬虫同理。</li>
 <li>利用在构建增量爬虫类时额外开启一个线程来监视 redis 数据库是否为空。</li>
 </ul>
@@ -953,16 +955,16 @@
 <p>实现类：<code>class TencentNewsIncreSpider(RedisSpider)</code></p>
 <p>使用方式：<code>scrapy crawl TencentNewsIncre [-a data_table='news'] [-a attribution='main']</code></p>
 <h4 id="_13">新华网<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-<p>实现类：<code>class TencentNewsIncreSpider(RedisSpider)</code></p>
+<p>实现类：<code>class XinhuaNewsIncreSpider(RedisSpider)</code></p>
 <p>使用方式：<code>scrapy crawl XinhuaNewsIncre [-a data_table='news'] [-a attribution='main']</code></p>
 <h4 id="_14">网易新闻<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
-<p>实现类：<code>class TencentNewsIncreSpider(RedisSpider)</code></p>
+<p>实现类：<code>class WangyiNewsIncreSpider(RedisSpider)</code></p>
 <p>使用方式：<code>scrapy crawl WangyiNewsIncre [-a data_table='news'] [-a attribution='main']</code></p>
 <h4 id="china-daily">China Daily<a class="headerlink" href="#china-daily" title="Permanent link">&para;</a></h4>
-<p>实现类：<code>class TencentNewsIncreSpider(RedisSpider)</code></p>
+<p>实现类：<code>class ChinaDailyNewsIncreSpider(RedisSpider)</code></p>
 <p>使用方式：<code>scrapy crawl ChinaDailyNewsIncre [-a data_table='news'] [-a attribution='main']</code></p>
 <h4 id="_15">新华网英文版<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
-<p>实现类：<code>class TencentNewsIncreSpider(RedisSpider)</code></p>
+<p>实现类：<code>class XinhuaEngNewsIncreSpider(RedisSpider)</code></p>
 <p>使用方式：<code>scrapy crawl XinhuaEngNewsIncre [-a data_table='news'] [-a attribution='main']</code></p>
 
 

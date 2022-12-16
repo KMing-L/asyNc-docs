@@ -27,6 +27,8 @@
 
 ### item
 
+实现类：`class NewsCrawlerItem(scrapy.Item)`
+
 对每一条新闻，记录如下条目：
 
 - news_url: 新闻网址
@@ -40,6 +42,8 @@
 - pub_time: 发布时间
 
 ### pipeline
+
+核心实现类：`class SQLPipeline()`
 
 对每一个爬取到的 item，我们设计了统一的流水线进行处理，该流水线完成如下功能：
 
@@ -78,7 +82,7 @@
 所有增量爬虫实现逻辑基本相同，在此统一进行说明：
 
 - 在 web_news_config.json 中写入待监视网络请求。
-- 每类增量爬虫在开启时可附加 main 属性，需额外负责监视 redis 内对应数据库中的网络请求是否为空，若为空则重新向 redis 数据库中加入相应的网络请求 url。
+- 每类增量爬虫在开启时可附加 main 属性，需额外创建 `IncrementTimer` 类，负责监视 redis 内对应数据库中的网络请求是否为空，若为空则重新向 redis 数据库中加入相应的网络请求 url。
     - redis 数据库命名：若爬取新闻站点为 Tencent，则相应的数据库命名为 `TencentNewsIncre:start_urls`，其他增量爬虫同理。
     - 利用在构建增量爬虫类时额外开启一个线程来监视 redis 数据库是否为空。
 - 从待爬取网络请求链接中获得新闻条目列表，进而爬取新闻条目内容。
@@ -92,24 +96,24 @@
 
 #### 新华网
    
-实现类：`class TencentNewsIncreSpider(RedisSpider)`
+实现类：`class XinhuaNewsIncreSpider(RedisSpider)`
 
 使用方式：`scrapy crawl XinhuaNewsIncre [-a data_table='news'] [-a attribution='main']`
 
 #### 网易新闻
    
-实现类：`class TencentNewsIncreSpider(RedisSpider)`
+实现类：`class WangyiNewsIncreSpider(RedisSpider)`
 
 使用方式：`scrapy crawl WangyiNewsIncre [-a data_table='news'] [-a attribution='main']`
 
 #### China Daily
    
-实现类：`class TencentNewsIncreSpider(RedisSpider)`
+实现类：`class ChinaDailyNewsIncreSpider(RedisSpider)`
 
 使用方式：`scrapy crawl ChinaDailyNewsIncre [-a data_table='news'] [-a attribution='main']`
 
 #### 新华网英文版
    
-实现类：`class TencentNewsIncreSpider(RedisSpider)`
+实现类：`class XinhuaEngNewsIncreSpider(RedisSpider)`
 
 使用方式：`scrapy crawl XinhuaEngNewsIncre [-a data_table='news'] [-a attribution='main']`

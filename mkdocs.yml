@@ -76,6 +76,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist
   - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true 
 
 nav:
   - 概述: index.md

@@ -20,7 +20,7 @@
 
 ### 增量爬取
 
-1. 实现了对【腾讯新闻，网易新闻，新华网，Chian Daily，新华网英文版】五个新闻网站的增量爬取，其中包含 43 个网页，共计 65 个网络请求。
+1. 实现了对【腾讯新闻，网易新闻，新华网，China Daily，新华网英文版】五个新闻网站的增量爬取，其中包含 43 个网页，共计 65 个网络请求。
 2. 理论上能够对网页新闻实现 1s 级的响应，即爬取网页中出现某条新闻后，能够在 1s 内将新闻加入数据库中。
 
 ## 实现
@@ -89,31 +89,31 @@
 - 同一类别的所有增量爬虫共同负责所有在待爬取 url 池中新闻条目的爬取。
 
 #### 腾讯新闻
-   
+
 实现类：`class TencentNewsIncreSpider(RedisSpider)`
 
 使用方式：`scrapy crawl TencentNewsIncre [-a data_table='news'] [-a attribution='main']`
 
 #### 新华网
-   
+
 实现类：`class XinhuaNewsIncreSpider(RedisSpider)`
 
 使用方式：`scrapy crawl XinhuaNewsIncre [-a data_table='news'] [-a attribution='main']`
 
 #### 网易新闻
-   
+
 实现类：`class WangyiNewsIncreSpider(RedisSpider)`
 
 使用方式：`scrapy crawl WangyiNewsIncre [-a data_table='news'] [-a attribution='main']`
 
 #### China Daily
-   
+
 实现类：`class ChinaDailyNewsIncreSpider(RedisSpider)`
 
 使用方式：`scrapy crawl ChinaDailyNewsIncre [-a data_table='news'] [-a attribution='main']`
 
 #### 新华网英文版
-   
+
 实现类：`class XinhuaEngNewsIncreSpider(RedisSpider)`
 
 使用方式：`scrapy crawl XinhuaEngNewsIncre [-a data_table='news'] [-a attribution='main']`

@@ -25,13 +25,7 @@ TODO:
 
 ### 新闻检索相关
 
-TODO：
-
-责任负责人：*szz
-
-1. Vue 和 Django/Pylucene 交互
-2. ES 搜索建议
-3. Pylucene 检索逻辑
+![后端索引相关](./images/后端索引相关.jpg)
 
 ### 用户相关
 

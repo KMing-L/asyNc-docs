@@ -16,12 +16,7 @@
 
 ### 新闻展示相关
 
-TODO:
-
-负责人：*wbw & sxx
-
-1. 主页新闻展示：Vue 和 Django 交互 & Django 缓存
-2. 个性化新闻展示：Vue & Django & Pylucene（应包含用户登录检查）
+![新闻展示相关](./images/%E6%B3%B3%E9%81%93%E5%9B%BE_%E6%96%B0%E9%97%BB%E5%B1%95%E7%A4%BA.png)
 
 ### 新闻检索相关
 
@@ -29,12 +24,7 @@ TODO:
 
 ### 用户相关
 
-TODO：
-
-责任负责人：*wbw
-
-1. 注册，登录，修改信息：Vue & Django
-2. 用户点击新闻后 tags 变化
+![用户相关](images/%E6%B3%B3%E9%81%93%E5%9B%BE_%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3.png)
 
 ### 其他
 

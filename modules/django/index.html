@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -489,10 +494,289 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Django 后端
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Django 后端
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    架构设计
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    设计原则
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    功能设计
+  </a>
+  
+    <nav class="md-nav" aria-label="功能设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    新闻缓存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    用户新闻管理器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    token校验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    视图模块
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    实现
+  </a>
+  
+    <nav class="md-nav" aria-label="实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    项目结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_data_from_db" class="md-nav__link">
+    新闻获取函数： get_data_from_db
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    新闻缓存定时更新器
+  </a>
+  
+    <nav class="md-nav" aria-label="新闻缓存定时更新器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selfrun" class="md-nav__link">
+    启动： self.run()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfcheck_db_update" class="md-nav__link">
+    扫描： self.check_db_update()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfget_db_news_num" class="md-nav__link">
+    获取数据库新闻数： self.get_db_news_num()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfupdate_cache" class="md-nav__link">
+    更新缓存： self.update_cache()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selftesting_modetrue" class="md-nav__link">
+    测试模式： self.testing_mode=True
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    新闻缓存管理器
+  </a>
+  
+    <nav class="md-nav" aria-label="新闻缓存管理器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selfupdate_cachenews_list" class="md-nav__link">
+    添加新闻至缓存： self.update_cache(news_list)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfget_cachecategory" class="md-nav__link">
+    获取首页分类新闻： self.get_cache(category)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    用户新闻管理器
+  </a>
+  
+    <nav class="md-nav" aria-label="用户新闻管理器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selfadd_to_cachenews" class="md-nav__link">
+    添加新闻至缓存： self.add_to_cache(news)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfsave_one_local_newsnews" class="md-nav__link">
+    存贮至用户新闻数据库： self.save_one_local_news(news)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfget_one_local_newsnews_id" class="md-nav__link">
+    从用户新闻数据库获取： self.get_one_local_news(news_id)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_1" class="md-nav__link">
+    token校验
+  </a>
+  
+    <nav class="md-nav" aria-label="token校验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    白名单
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_2" class="md-nav__link">
+    创建token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_3" class="md-nav__link">
+    解码token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_4" class="md-nav__link">
+    检验token过期
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_5" class="md-nav__link">
+    将token加入白名单
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_6" class="md-nav__link">
+    检验token有效
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_7" class="md-nav__link">
+    将token移除
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -529,6 +813,269 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    架构设计
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    设计原则
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    功能设计
+  </a>
+  
+    <nav class="md-nav" aria-label="功能设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    新闻缓存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    用户新闻管理器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    token校验
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    视图模块
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    实现
+  </a>
+  
+    <nav class="md-nav" aria-label="实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    项目结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_data_from_db" class="md-nav__link">
+    新闻获取函数： get_data_from_db
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    新闻缓存定时更新器
+  </a>
+  
+    <nav class="md-nav" aria-label="新闻缓存定时更新器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selfrun" class="md-nav__link">
+    启动： self.run()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfcheck_db_update" class="md-nav__link">
+    扫描： self.check_db_update()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfget_db_news_num" class="md-nav__link">
+    获取数据库新闻数： self.get_db_news_num()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfupdate_cache" class="md-nav__link">
+    更新缓存： self.update_cache()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selftesting_modetrue" class="md-nav__link">
+    测试模式： self.testing_mode=True
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    新闻缓存管理器
+  </a>
+  
+    <nav class="md-nav" aria-label="新闻缓存管理器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selfupdate_cachenews_list" class="md-nav__link">
+    添加新闻至缓存： self.update_cache(news_list)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfget_cachecategory" class="md-nav__link">
+    获取首页分类新闻： self.get_cache(category)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    用户新闻管理器
+  </a>
+  
+    <nav class="md-nav" aria-label="用户新闻管理器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selfadd_to_cachenews" class="md-nav__link">
+    添加新闻至缓存： self.add_to_cache(news)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfsave_one_local_newsnews" class="md-nav__link">
+    存贮至用户新闻数据库： self.save_one_local_news(news)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfget_one_local_newsnews_id" class="md-nav__link">
+    从用户新闻数据库获取： self.get_one_local_news(news_id)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_1" class="md-nav__link">
+    token校验
+  </a>
+  
+    <nav class="md-nav" aria-label="token校验">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    白名单
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_2" class="md-nav__link">
+    创建token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_3" class="md-nav__link">
+    解码token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_4" class="md-nav__link">
+    检验token过期
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_5" class="md-nav__link">
+    将token加入白名单
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_6" class="md-nav__link">
+    检验token有效
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_7" class="md-nav__link">
+    将token移除
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -548,9 +1095,185 @@
   </a>
 
 
-  <h1>Django 后端</h1>
-
-
+<h1 id="_1">后端<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">架构设计<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><img alt="后端整体设计" src="../../images/%E5%90%8E%E7%AB%AF.png" /></p>
+<h2 id="_3">设计原则<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">功能设计<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">新闻缓存<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li>定时从新闻数据库获取最新新闻并缓存至内存</li>
+<li>缓存搜索内容至内存</li>
+<li>维护新闻首页展示内容</li>
+<li>向其它内部模块快速提供新闻内容</li>
+<li>启动（退出）时加载（保存）本地缓存</li>
+<li>维护缓存大小</li>
+</ol>
+<h3 id="_6">用户新闻管理器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li>记录与用户交互的新闻及交互信息</li>
+<li>缓存加速</li>
+<li>维护AI摘要内容</li>
+</ol>
+<h3 id="token"><code>token</code>校验<a class="headerlink" href="#token" title="Permanent link">&para;</a></h3>
+<ol>
+<li>用户登陆时生成<code>token</code>（<code>7</code>天时效）</li>
+<li>用户退出登录时注销<code>token</code></li>
+<li>维护<code>token</code>白名单</li>
+<li>校验请求中<code>token</code>是否有效</li>
+</ol>
+<h3 id="_7">视图模块<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>根据数据库中信息，响应前端请求</li>
+<li>根据前端请求，更新数据库</li>
+</ol>
+<h2 id="_8">实现<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="_9">项目结构<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>│  .pycodestyle  # pycodestyle配置文件
+│  .pylintrc  # pylint配置文件
+│  pytest.ini  # pytest配置文件
+│  db.sqlite3  # 默认数据库（未使用）
+│  manage.py  # Django项目管理
+│
+├─asyNc  # 默认项目文件夹
+│      asgi.py
+│      settings.py  # 项目设置
+│      urls.py  # 项目主路由
+│      wsgi.py
+│      __init__.py
+│
+├─certificate  # 数据库证书
+│      ca-bundle.pem
+│      ca.pem
+│
+├─config  # 后端配置文件
+│      config.json  # 后端数据库配置
+│      es.json  # es搜索配置
+│      lucene.json  # lucene搜索配置
+│
+├─data  # 数据文件
+│      default_avatar.base64  # 默认头像
+│      news_cache.pkl  # 新闻缓存（本地存储部分）
+│      news_template.pkl  # 新闻模板
+│
+└─main  # 后端主应用
+    │  admin.py
+    │  apps.py  # apps设置
+    │  config.py  # 参数设置
+    │  models.py  # 数据模型
+    │  responses.py  # responses模板
+    │  tests.py  # 单元测试
+    │  tools.py  # 工具
+    │  urls.py  # 应用路由
+    │  views.py  # 视图
+    │  __init__.py
+    │
+    ├─managers
+    │      DBScanner.py  # 新闻缓存定时更新器
+    │      NewsCache.py  # 新闻缓存管理器
+    │      LocalNewsManager.py  # 用户新闻管理器
+    │
+    └─migrations  # 数据库模型迁移
+</code></pre></div>
+<h3 id="get_data_from_db">新闻获取函数： <code>get_data_from_db</code><a class="headerlink" href="#get_data_from_db" title="Permanent link">&para;</a></h3>
+<p>实现函数：<code>main.tools.get_data_from_db(news_id)</code></p>
+<p>按优先顺序根据<code>news_id</code>从<code>新闻缓存管理器</code>、<code>用户新闻管理器</code>、<code>新闻数据库</code>中获取新闻并返回。</p>
+<h3 id="_10">新闻缓存定时更新器<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>实现类：<code>main.managers.DBScanner.DBScanner(db_connection, news_cache, get_data_from_db, testing_mode=False, front_page_news_num=10, db_check_interval=8, db_news_look_back=65536, db_update_minimum_interval=8)</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>db_connection</code></td>
+<td><code>新闻数据库连接</code></td>
+</tr>
+<tr>
+<td><code>news_cache</code></td>
+<td><code>新闻缓存管理器</code></td>
+</tr>
+<tr>
+<td><code>get_data_from_db</code></td>
+<td><code>新闻获取函数</code></td>
+</tr>
+<tr>
+<td><code>testing_mode</code></td>
+<td><code>测试模式</code></td>
+</tr>
+<tr>
+<td><code>front_page_news_num</code></td>
+<td><code>首页新闻数</code></td>
+</tr>
+<tr>
+<td><code>db_check_interval</code></td>
+<td><code>数据库扫描间隔</code></td>
+</tr>
+<tr>
+<td><code>db_news_look_back</code></td>
+<td><code>数据库扫描窗口</code></td>
+</tr>
+<tr>
+<td><code>db_update_minimum_interval</code></td>
+<td><code>缓存更新间隔下限</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="selfrun">启动： <code>self.run()</code><a class="headerlink" href="#selfrun" title="Permanent link">&para;</a></h4>
+<p>在子线程中启动。启动时根据<code>首页新闻数</code>调用<code>新闻获取函数</code>从<code>新闻数据库</code>中快速获取满足新闻首页展示数量的最新新闻。启动后<code>扫描</code>数据库变更。</p>
+<h4 id="selfcheck_db_update">扫描： <code>self.check_db_update()</code><a class="headerlink" href="#selfcheck_db_update" title="Permanent link">&para;</a></h4>
+<p>根据<code>数据库扫描间隔</code>定期<code>获取数据库新闻数</code>。若<code>新闻数据库</code>中新闻数目更新，则根据<code>缓存更新间隔下限</code>判断是否更新缓存并执行。</p>
+<h4 id="selfget_db_news_num">获取数据库新闻数： <code>self.get_db_news_num()</code><a class="headerlink" href="#selfget_db_news_num" title="Permanent link">&para;</a></h4>
+<p>从<code>新闻数据库</code>中获取数据库新闻总数。</p>
+<h4 id="selfupdate_cache">更新缓存： <code>self.update_cache()</code><a class="headerlink" href="#selfupdate_cache" title="Permanent link">&para;</a></h4>
+<p>调用<code>新闻缓存管理器</code>的更新缓存方法。</p>
+<h4 id="selftesting_modetrue">测试模式： <code>self.testing_mode=True</code><a class="headerlink" href="#selftesting_modetrue" title="Permanent link">&para;</a></h4>
+<p>根据<code>数据库扫描窗口</code>从<code>新闻数据库</code>获取新加入的新闻，并添加至<code>新闻缓存管理器</code>。</p>
+<h3 id="_11">新闻缓存管理器<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>实现类：<code>main.managers.NewsCache.NewsCache()</code></p>
+<h4 id="selfupdate_cachenews_list">添加新闻至缓存： <code>self.update_cache(news_list)</code><a class="headerlink" href="#selfupdate_cachenews_list" title="Permanent link">&para;</a></h4>
+<p>将<code>news_list</code>中的新闻加入缓存，并维护缓存大小（删除旧新闻）。</p>
+<h4 id="selfget_cachecategory">获取首页分类新闻： <code>self.get_cache(category)</code><a class="headerlink" href="#selfget_cachecategory" title="Permanent link">&para;</a></h4>
+<p>获取缓存中类别为<code>category</code>的新闻。</p>
+<h3 id="_12">用户新闻管理器<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>实现类：<code>main.managers.LocalNewsManager.LocalNewsManager()</code></p>
+<p>管理与用户产生过交互的新闻。</p>
+<h4 id="selfadd_to_cachenews">添加新闻至缓存： <code>self.add_to_cache(news)</code><a class="headerlink" href="#selfadd_to_cachenews" title="Permanent link">&para;</a></h4>
+<p>将<code>news</code>新闻加入缓存，并维护缓存大小（删除旧新闻）。</p>
+<h4 id="selfsave_one_local_newsnews">存贮至用户新闻数据库： <code>self.save_one_local_news(news)</code><a class="headerlink" href="#selfsave_one_local_newsnews" title="Permanent link">&para;</a></h4>
+<p>将<code>news</code>新闻加入<code>用户新闻数据库</code>，并<code>添加新闻至缓存</code>：。</p>
+<h4 id="selfget_one_local_newsnews_id">从用户新闻数据库获取： <code>self.get_one_local_news(news_id)</code><a class="headerlink" href="#selfget_one_local_newsnews_id" title="Permanent link">&para;</a></h4>
+<p>按优先顺序根据<code>news_id</code>从<code>缓存</code>和<code>用户新闻数据库</code>中获取新闻。</p>
+<h3 id="token_1"><code>token</code>校验<a class="headerlink" href="#token_1" title="Permanent link">&para;</a></h3>
+<h4 id="_13"><code>白名单</code><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p>样式：
+<div class="highlight"><pre><span></span><code>TOKEN_WHITE_LIST={
+    &quot;user_id 1&quot;: [&quot;encoded_token 1&quot;,&quot;encoded_token 2&quot;,...],
+    &quot;user_id 2&quot;: [&quot;encoded_token 1&quot;,&quot;encoded_token 2&quot;,...],
+    ...
+}
+</code></pre></div></p>
+<h4 id="token_2">创建<code>token</code><a class="headerlink" href="#token_2" title="Permanent link">&para;</a></h4>
+<p>实现函数： <code>main.tools.create_token(user_name, user_id=0)</code></p>
+<p>根据<code>user_name</code>，<code>user_id</code>，<code>当前时间</code>创建<code>token</code>。</p>
+<h4 id="token_3">解码<code>token</code><a class="headerlink" href="#token_3" title="Permanent link">&para;</a></h4>
+<p>实现函数： <code>main.tools.decode_token(encoded_token)</code></p>
+<p>根据<code>encoded_token</code>，解码得到<code>user_name</code>，<code>user_id</code>并返回。</p>
+<h4 id="token_4">检验<code>token</code>过期<a class="headerlink" href="#token_4" title="Permanent link">&para;</a></h4>
+<p>实现函数： <code>main.tools.token_expired(token)</code></p>
+<p>检查<code>token</code>是否过期。</p>
+<h4 id="token_5">将<code>token</code>加入白名单<a class="headerlink" href="#token_5" title="Permanent link">&para;</a></h4>
+<p>实现函数： <code>main.tools.add_token_to_white_list(encoded_token)</code></p>
+<p>将<code>encoded_token</code>加入<code>白名单</code>。</p>
+<h4 id="token_6">检验<code>token</code>有效<a class="headerlink" href="#token_6" title="Permanent link">&para;</a></h4>
+<p>实现函数： <code>main.tools.check_token_in_white_list(encoded_token)</code></p>
+<p>先检查<code>encoded_token</code>是否在<code>白名单</code>，之后<code>检验token过期</code>。</p>
+<h4 id="token_7">将<code>token</code>移除<a class="headerlink" href="#token_7" title="Permanent link">&para;</a></h4>
+<p>实现函数： <code>main.tools.del_token_from_white_list(encoded_token)</code></p>
+<p>将<code>encoded_token</code>移除<code>白名单</code>。</p>
 
 
 

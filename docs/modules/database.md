@@ -29,4 +29,18 @@ TODO：*sxx
 
 ## 索引数据库
 
-TODO：*szz
+```SQL
+    Column     |           Type           | Collation | Nullable |             Default              
+---------------+--------------------------+-----------+----------+----------------------------------
+ news_id       | integer                  |           | not null |
+ news_url      | text                     |           | not null | 
+ media         | text                     |           |          | 
+ category      | character varying(20)    |           |          | 
+ tags          | character varying(30)[]  |           |          | 
+ title         | character varying(200)   |           |          | 
+ description   | text                     |           |          | 
+ content       | text                     |           |          | 
+ first_img_url | text                     |           |          | 
+ pub_time      | timestamp with time zone |           |          | 
+```
+

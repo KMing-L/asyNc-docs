@@ -488,10 +488,10 @@
       
         <li class="md-nav__item">
   <a href="#pylucene" class="md-nav__link">
-    Pylucene 功能设计
+    Pylucene功能设计
   </a>
   
-    <nav class="md-nav" aria-label="Pylucene 功能设计">
+    <nav class="md-nav" aria-label="Pylucene功能设计">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -530,7 +530,7 @@
         
           <li class="md-nav__item">
   <a href="#read" class="md-nav__link">
-    Read相关
+    Read相关：
   </a>
   
 </li>
@@ -564,21 +564,21 @@
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    搜索相关
+    搜索相关：
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    用户功能相关
+    用户功能相关：
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    搜索建议
+    搜索建议：
   </a>
   
 </li>
@@ -687,10 +687,10 @@
       
         <li class="md-nav__item">
   <a href="#pylucene" class="md-nav__link">
-    Pylucene 功能设计
+    Pylucene功能设计
   </a>
   
-    <nav class="md-nav" aria-label="Pylucene 功能设计">
+    <nav class="md-nav" aria-label="Pylucene功能设计">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -729,7 +729,7 @@
         
           <li class="md-nav__item">
   <a href="#read" class="md-nav__link">
-    Read相关
+    Read相关：
   </a>
   
 </li>
@@ -763,21 +763,21 @@
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    搜索相关
+    搜索相关：
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    用户功能相关
+    用户功能相关：
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    搜索建议
+    搜索建议：
   </a>
   
 </li>
@@ -810,35 +810,35 @@
 <h1 id="_1">检索<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">架构设计<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><img alt="搜索" src="../../images/%E6%90%9C%E7%B4%A2.png" /></p>
-<h2 id="pylucene">Pylucene 功能设计<a class="headerlink" href="#pylucene" title="Permanent link">&para;</a></h2>
+<h2 id="pylucene">Pylucene功能设计<a class="headerlink" href="#pylucene" title="Permanent link">&para;</a></h2>
 <h3 id="_3">核心<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li>多线程：多线程定时从爬虫数据库读取信息并构建索引数据库</li>
 <li>索引数据库分片：通过将索引数据库分片，实现搜索时候的多线程检索，提高搜索速度，达到千万数据量新闻秒级别响应</li>
-<li>镜像重构：在原本的 Pylucene 镜像中增添新的中文分词器，获得更好的分词效果</li>
-<li>关键词高亮：利用 Pylucene 的原生高亮功能对索引数据库中出现关键词的片段进行高亮处理，减小 Django 后端的压力，并且也能提高响应速度。</li>
-<li>模块分离：遵从模块分离原则，在搜索部分引入 TinyRpc 通信模块，Django 后端与 Pylucene 通过 HTTP 协议进行数据通信</li>
+<li>镜像重构：在原本的Pylucene镜像中增添新的中文分词器，获得更好的分词效果</li>
+<li>关键词高亮：利用Pylucene的原生高亮功能对索引数据库中出现关键词的片段进行高亮处理，减小Django后端的压力，并且也能提高响应速度。</li>
+<li>模块分离：遵从模块分离原则，在搜索部分引入TinyRpc通信模块，Django后端与Pylucene通过HTTP协议进行数据通信</li>
 <li>多样检索方式：设计了基本分词检索、必选词与排除词检索等检索接口，为用户提供多样的搜索服务。</li>
 </ol>
 <h3 id="_4">数据库构建<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
-<li>定时从爬虫数据库进行数据的读取，每 1s 进行一次新闻检索，是否有新的新闻写入。</li>
-<li>分片构建索引数据库，根据新闻的数据库 id 写入对应的分片索引数据库中，同时也能实现多线程写入，提高读取速度，目前的速度大约是600 w/天，远大于爬虫爬取速度，能够满足实际需求。</li>
+<li>定时从爬虫数据库进行数据的读取，每1s进行一次新闻检索，是否有新的新闻写入。</li>
+<li>分片构建索引数据库，根据新闻的数据库id写入对应的分片索引数据库中，同时也能实现多线程写入，提高读取速度，目前的速度大约是600w/天，远大于爬虫爬取速度，能够满足实际需求。</li>
 </ol>
 <h3 id="_5">索引服务<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>分片索引数据库多线程索引，提高搜索速度，结果合并的时候根据 Pylucene 的关键词相关度打分进行排序，返回最相关的新闻。</p>
+<p>分片索引数据库多线程索引，提高搜索速度，结果合并的时候根据Pylucene的关键词相关度打分进行排序，返回最相关的新闻。</p>
 </li>
 <li>
 <p>搜索按照时间排序：为了在保证相关度的同时对返回新闻进行时间的排序，我们对索引数据库中的返回数据进行了一个阈值的筛选，相关度评分大于该值的新闻进行排序，并且返回排序结果。</p>
 </li>
 <li>
-<p>关键词与排除词搜索：利用 Pylucene 的<code>多域检索</code>和<code>Term检索</code>支持多关键词和排除词搜索需求。</p>
+<p>关键词与排除词搜索：利用Pylucene的<code>多域检索</code>和<code>Term检索</code>支持多关键词和排除词搜索需求。</p>
 </li>
 </ol>
 <h2 id="_6">实现<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="read">Read相关<a class="headerlink" href="#read" title="Permanent link">&para;</a></h3>
+<h3 id="read">Read相关：<a class="headerlink" href="#read" title="Permanent link">&para;</a></h3>
 <p>对每一条写入索引数据库的新闻，记录如下条目：</p>
 <ul>
 <li>news_url: 新闻网址</li>
@@ -849,17 +849,15 @@
 <li>content: 新闻正文</li>
 <li>first_img_url: 头图</li>
 <li>pub_time: 发布时间</li>
-<li>id：数据库 id</li>
+<li>id：数据库id</li>
 </ul>
 <p>关键函数：</p>
 <ul>
 <li><code>def check_db_status</code>：用来检查数据库的连接状态</li>
 <li><code>def get_document</code>：生成索引数据类对象</li>
+<li><code>def read_from_db</code>：用来从爬虫数据库读取信息并写入索引数据库</li>
 <li>
-<p><code>def read_from_db</code>：用来从爬虫数据库读取信息并写入索引数据库</p>
-<ul>
-<li>传入：起始 id 与终止 id</li>
-</ul>
+<p>传入：起始id与终止id</p>
 </li>
 <li>
 <p><code>def read_thread</code>：用于多线程的读取管理</p>
@@ -870,16 +868,12 @@
 <p>核心功能：提供搜索的相关接口</p>
 <p>关键函数：</p>
 <ul>
-<li><code>def search_keywords</code>：<ul>
+<li><code>def search_keywords</code>：</li>
 <li>传入：搜索的关键词、必须包含的关键词列表、排除词列表、分页页码</li>
 <li>返回：相关页码高亮后的十条结果组成的列表</li>
-</ul>
-</li>
-<li><code>def search_news</code>:<ul>
+<li><code>def search_news</code>:</li>
 <li>传入：搜索的关键词、分页页码</li>
 <li>返回：相关页码高亮后的十条结果组成的列表</li>
-</ul>
-</li>
 </ul>
 <h3 id="thread">Thread相关<a class="headerlink" href="#thread" title="Permanent link">&para;</a></h3>
 <p>核心实现类：<code>class MyThread()</code></p>
@@ -890,22 +884,22 @@
 <li><code>def get_result</code>：带返回值的多线程函数的结果记录</li>
 </ul>
 <h2 id="_7">搜索后端<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<h3 id="_8">搜索相关<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_8">搜索相关：<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>核心功能：支持基本的搜索功能</p>
 <p>关键函数：</p>
 <ul>
 <li><code>keyword_search</code>:实现最基本的搜索功能，从前端请求中解析出相关的关键词、页码、必含词排除词参数进行搜索处理</li>
-<li><code>get_location</code>：根据 Pylucene 对于搜索关键词的高亮标记进行位置定位，方便前端的渲染</li>
-<li><code>check_contain</code>：由于 Pylucene 相关的分词器有时候无法满足需求，需要对返回结果进行额外的必含词与排除词检查</li>
+<li><code>get_location</code>：根据Pylucene对于搜索关键词的高亮标记进行位置定位，方便前端的渲染</li>
+<li><code>check_contain</code>：由于Pylucene相关的分词器有时候无法满足需求，需要对返回结果进行额外的必含词与排除词检查</li>
 </ul>
-<h3 id="_9">用户功能相关<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_9">用户功能相关：<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>核心功能：满足搜索中相关的用户需求记录</p>
 <p>关键函数：</p>
 <ul>
-<li><code>update_tags</code>:根据 jieba 分词器以及搜索的返回结果，将前三条搜索结果的 tags 存入用户的搜索偏好中</li>
+<li><code>update_tags</code>:根据jieba分词器以及搜索的返回结果，将前三条搜索结果的tags存入用户的搜索偏好中</li>
 <li><code>personalize</code>:根据用户的搜索偏好进行用户的个性化推荐，返回相关的新闻。</li>
 </ul>
-<h3 id="_10">搜索建议<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_10">搜索建议：<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>通过Elasticsearch进行搜索建议的返回</p>
 </blockquote>

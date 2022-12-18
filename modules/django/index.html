@@ -566,6 +566,13 @@
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    用户管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     视图模块
   </a>
   
@@ -577,7 +584,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     实现
   </a>
   
@@ -585,7 +592,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     项目结构
   </a>
   
@@ -599,7 +606,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     新闻缓存定时更新器
   </a>
   
@@ -647,7 +654,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     新闻缓存管理器
   </a>
   
@@ -674,7 +681,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     用户新闻管理器
   </a>
   
@@ -716,7 +723,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     白名单
   </a>
   
@@ -867,6 +874,13 @@
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    用户管理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     视图模块
   </a>
   
@@ -878,7 +892,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     实现
   </a>
   
@@ -886,7 +900,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     项目结构
   </a>
   
@@ -900,7 +914,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     新闻缓存定时更新器
   </a>
   
@@ -948,7 +962,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     新闻缓存管理器
   </a>
   
@@ -975,7 +989,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     用户新闻管理器
   </a>
   
@@ -1017,7 +1031,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     白名单
   </a>
   
@@ -1099,6 +1113,10 @@
 <h2 id="_2">架构设计<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><img alt="后端整体设计" src="../../images/%E5%90%8E%E7%AB%AF.png" /></p>
 <h2 id="_3">设计原则<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ol>
+<li>缓存加速：数据库中的数据量与访问速度负相关。由于<code>新闻数据库</code>数据量大（千万量级），因此需要加入缓存系统。为保证缓存命中率，将近期更新的新闻、近期与用户交互（搜索、收藏、阅读等）的新闻加入缓存。</li>
+<li>业务分离：后端与AI摘要分别是IO密集型与计算密集型任务。因此为二者建立独立服务，避免两者争抢运算资源。</li>
+</ol>
 <h2 id="_4">功能设计<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="_5">新闻缓存<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1122,13 +1140,21 @@
 <li>维护<code>token</code>白名单</li>
 <li>校验请求中<code>token</code>是否有效</li>
 </ol>
-<h3 id="_7">视图模块<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_7">用户管理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>创建用户</li>
+<li>用户登录（登出）</li>
+<li>更新（获取）用户标签</li>
+<li>修改（获取）用户信息</li>
+<li>修改（获取）用户头像</li>
+</ol>
+<h3 id="_8">视图模块<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>根据数据库中信息，响应前端请求</li>
 <li>根据前端请求，更新数据库</li>
 </ol>
-<h2 id="_8">实现<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h3 id="_9">项目结构<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h2 id="_9">实现<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">项目结构<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>│  .pycodestyle  # pycodestyle配置文件
 │  .pylintrc  # pylint配置文件
 │  pytest.ini  # pytest配置文件
@@ -1178,7 +1204,7 @@
 <h3 id="get_data_from_db">新闻获取函数： <code>get_data_from_db</code><a class="headerlink" href="#get_data_from_db" title="Permanent link">&para;</a></h3>
 <p>实现函数：<code>main.tools.get_data_from_db(news_id)</code></p>
 <p>按优先顺序根据<code>news_id</code>从<code>新闻缓存管理器</code>、<code>用户新闻管理器</code>、<code>新闻数据库</code>中获取新闻并返回。</p>
-<h3 id="_10">新闻缓存定时更新器<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_11">新闻缓存定时更新器<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>实现类：<code>main.managers.DBScanner.DBScanner(db_connection, news_cache, get_data_from_db, testing_mode=False, front_page_news_num=10, db_check_interval=8, db_news_look_back=65536, db_update_minimum_interval=8)</code></p>
 <table>
 <thead>
@@ -1232,13 +1258,13 @@
 <p>调用<code>新闻缓存管理器</code>的更新缓存方法。</p>
 <h4 id="selftesting_modetrue">测试模式： <code>self.testing_mode=True</code><a class="headerlink" href="#selftesting_modetrue" title="Permanent link">&para;</a></h4>
 <p>根据<code>数据库扫描窗口</code>从<code>新闻数据库</code>获取新加入的新闻，并添加至<code>新闻缓存管理器</code>。</p>
-<h3 id="_11">新闻缓存管理器<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h3 id="_12">新闻缓存管理器<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>实现类：<code>main.managers.NewsCache.NewsCache()</code></p>
 <h4 id="selfupdate_cachenews_list">添加新闻至缓存： <code>self.update_cache(news_list)</code><a class="headerlink" href="#selfupdate_cachenews_list" title="Permanent link">&para;</a></h4>
 <p>将<code>news_list</code>中的新闻加入缓存，并维护缓存大小（删除旧新闻）。</p>
 <h4 id="selfget_cachecategory">获取首页分类新闻： <code>self.get_cache(category)</code><a class="headerlink" href="#selfget_cachecategory" title="Permanent link">&para;</a></h4>
 <p>获取缓存中类别为<code>category</code>的新闻。</p>
-<h3 id="_12">用户新闻管理器<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_13">用户新闻管理器<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>实现类：<code>main.managers.LocalNewsManager.LocalNewsManager()</code></p>
 <p>管理与用户产生过交互的新闻。</p>
 <h4 id="selfadd_to_cachenews">添加新闻至缓存： <code>self.add_to_cache(news)</code><a class="headerlink" href="#selfadd_to_cachenews" title="Permanent link">&para;</a></h4>
@@ -1248,7 +1274,7 @@
 <h4 id="selfget_one_local_newsnews_id">从用户新闻数据库获取： <code>self.get_one_local_news(news_id)</code><a class="headerlink" href="#selfget_one_local_newsnews_id" title="Permanent link">&para;</a></h4>
 <p>按优先顺序根据<code>news_id</code>从<code>缓存</code>和<code>用户新闻数据库</code>中获取新闻。</p>
 <h3 id="token_1"><code>token</code>校验<a class="headerlink" href="#token_1" title="Permanent link">&para;</a></h3>
-<h4 id="_13"><code>白名单</code><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<h4 id="_14"><code>白名单</code><a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <p>样式：
 <div class="highlight"><pre><span></span><code>TOKEN_WHITE_LIST={
     &quot;user_id 1&quot;: [&quot;encoded_token 1&quot;,&quot;encoded_token 2&quot;,...],

@@ -23,9 +23,38 @@ Indexes:
     "news_news_url_key" UNIQUE CONSTRAINT, btree (news_url)
 ```
 
+## 用户新闻数据库
+
+```SQL
+                                        Table "public.news"
+    Column     |           Type           | Collation | Nullable |             Default              
+---------------+--------------------------+-----------+----------+----------------------------------
+ id            | integer                  |           | not null | 
+ news_id       | integer                  |           |          | 
+ cite_count    | integer                  |           |          | 
+ ai_processed  | boolean                  |           |          | 
+ data          | jsonb                    |           |          | 
+```
+
 ## 用户数据库
 
-TODO：*sxx
+```SQL
+                                        Table "public.news"
+    Column     |           Type           | Collation | Nullable |             Default              
+---------------+--------------------------+-----------+----------+----------------------------------
+ id            | integer                  |           | not null | 
+ tags          | jsonb                    |           |          | 
+ user_name     | character varying(12)    |           | not null | 
+ password      | character varying(40)    |           | not null | 
+ signature     | character varying(200)   |           |          | 
+ mail          | character varying(100)   |           |          | 
+ avatar        | text                     |           |          | 
+ register_date | timestamp with time zone |           |          | 
+ favorites     | jsonb                    |           |          | 
+ readlist      | jsonb                    |           |          | 
+ read_history  | jsonb                    |           |          | 
+ search_history| jsonb                    |           |          | 
+```
 
 ## 索引数据库
 

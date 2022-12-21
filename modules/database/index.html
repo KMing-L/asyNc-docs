@@ -404,13 +404,20 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    用户数据库
+    用户新闻数据库
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    用户数据库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     索引数据库
   </a>
   
@@ -597,13 +604,20 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    用户数据库
+    用户新闻数据库
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    用户数据库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     索引数据库
   </a>
   
@@ -649,9 +663,34 @@
 <span class="w">    </span><span class="ss">&quot;news_pkey&quot;</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"> </span><span class="n">btree</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="ss">&quot;news_news_url_key&quot;</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="p">,</span><span class="w"> </span><span class="n">btree</span><span class="w"> </span><span class="p">(</span><span class="n">news_url</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
-<h2 id="_3">用户数据库<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>TODO：*sxx</p>
-<h2 id="_4">索引数据库<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">用户新闻数据库<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="w">                                        </span><span class="k">Table</span><span class="w"> </span><span class="ss">&quot;public.news&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="k">Column</span><span class="w">     </span><span class="o">|</span><span class="w">           </span><span class="k">Type</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="k">Collation</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Nullable</span><span class="w"> </span><span class="o">|</span><span class="w">             </span><span class="k">Default</span><span class="w">              </span>
+<span class="c1">---------------+--------------------------+-----------+----------+----------------------------------</span>
+<span class="w"> </span><span class="n">id</span><span class="w">            </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">                  </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">news_id</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">                  </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">cite_count</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">                  </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">ai_processed</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nb">boolean</span><span class="w">                  </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="k">data</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">jsonb</span><span class="w">                    </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+</code></pre></div>
+<h2 id="_4">用户数据库<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="w">                                        </span><span class="k">Table</span><span class="w"> </span><span class="ss">&quot;public.news&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="k">Column</span><span class="w">     </span><span class="o">|</span><span class="w">           </span><span class="k">Type</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="k">Collation</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Nullable</span><span class="w"> </span><span class="o">|</span><span class="w">             </span><span class="k">Default</span><span class="w">              </span>
+<span class="c1">---------------+--------------------------+-----------+----------+----------------------------------</span>
+<span class="w"> </span><span class="n">id</span><span class="w">            </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">                  </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">tags</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">jsonb</span><span class="w">                    </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">user_name</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">password</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">signature</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="w">   </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">mail</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w">   </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">avatar</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="nb">text</span><span class="w">                     </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">register_date</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">time</span><span class="w"> </span><span class="k">zone</span><span class="w"> </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">favorites</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="n">jsonb</span><span class="w">                    </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">readlist</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">jsonb</span><span class="w">                    </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">read_history</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">jsonb</span><span class="w">                    </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+<span class="w"> </span><span class="n">search_history</span><span class="o">|</span><span class="w"> </span><span class="n">jsonb</span><span class="w">                    </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w">          </span><span class="o">|</span><span class="w"> </span>
+</code></pre></div>
+<h2 id="_5">索引数据库<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">Column</span><span class="w">     </span><span class="o">|</span><span class="w">           </span><span class="k">Type</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="k">Collation</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Nullable</span><span class="w"> </span><span class="o">|</span><span class="w">             </span><span class="k">Default</span><span class="w">              </span>
 <span class="c1">---------------+--------------------------+-----------+----------+----------------------------------</span>
 <span class="w"> </span><span class="n">news_id</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">                  </span><span class="o">|</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">|</span><span class="w"></span>

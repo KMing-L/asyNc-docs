@@ -12,14 +12,14 @@
         <meta name="author" content="刘铠铭 尚子智 宋曦轩 王博文 郑友捷">
       
       
-        <link rel="canonical" href="https://kming-l.github.io/asyNc-docs/structure/">
+        <link rel="canonical" href="https://kming-l.github.io/asyNc-docs/implement/">
       
       <link rel="icon" href="../images/asyNc.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>需求分析 - asyNc 新闻检索系统</title>
+        <title>需求实现 - asyNc 新闻检索系统</title>
       
     
     
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              需求分析
+              需求实现
             
           </span>
         </div>
@@ -226,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../structure/" class="md-tabs__link md-tabs__link--active">
         需求及分析
       </a>
     </li>
@@ -347,6 +347,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../structure/" class="md-nav__link">
+        需求分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -359,12 +373,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          需求分析
+          需求实现
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        需求分析
+        需求实现
       </a>
       
         
@@ -384,15 +398,56 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    概览
+    模块分析
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    用例分析
+    功能分析
   </a>
+  
+    <nav class="md-nav" aria-label="功能分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    新闻爬取相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    新闻展示相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    新闻检索相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    用户相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    新闻收藏于新闻摘要
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -400,20 +455,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../implement/" class="md-nav__link">
-        需求实现
-      </a>
     </li>
   
 
@@ -640,15 +681,56 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    概览
+    模块分析
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    用例分析
+    功能分析
   </a>
+  
+    <nav class="md-nav" aria-label="功能分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    新闻爬取相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    新闻展示相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    新闻检索相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    用户相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    新闻收藏于新闻摘要
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -666,43 +748,29 @@
                 
                   
 
-  <a href="https://github.com/KMing-L/asyNc-docs/edit/master/docs/structure.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/KMing-L/asyNc-docs/edit/master/docs/implement.md" title="编辑此页" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="_1">用户需求分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">概览<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>用户端：</p>
-<ul>
-<li>提供新闻主页展示功能<ul>
-<li>可以选择不同栏目，查看不同栏目的最新新闻</li>
-</ul>
-</li>
-<li>提供新闻检索功能<ul>
-<li>可以选择按照相关度排序或按照时间排序</li>
-<li>可以增添搜索项必须词与排除词</li>
-</ul>
-</li>
-<li>点击相应新闻后可以跳转至对应的新闻条目进行展示</li>
-<li>用户可以管理个人信息<ul>
-<li>用户名，密码</li>
-<li>头像，个性签名</li>
-</ul>
-</li>
-<li>用户可以根据最近浏览的新闻查看个人喜好（以词云展示）</li>
-<li>用户可以查看系统推荐的个性化新闻</li>
-<li>用户可以查看浏览历史</li>
-<li>用户可以将希望查看的新闻添加至稍后再看列表</li>
-<li>用户可以收藏新闻<ul>
-<li>系统可以为用户收藏的新闻进行智能摘要</li>
-</ul>
-</li>
-</ul>
-<h2 id="_3">用例分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>为了更好的展示用户需求，我们可以从用户角度画出如下用例图：</p>
-<p><img alt="用例图" src="../images/%E7%94%A8%E4%BE%8B%E5%9B%BE.png" /></p>
+<h1 id="_1">需求实现<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">模块分析<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>我们采用模块化设计，将整个系统分为【Django 后端，AI 模块，Pylucene 模块，Vue 前端，Scrapy 爬虫】五部分，并尽可能减少模块间的耦合，最终得到了如下架构：</p>
+<p><img alt="整体架构" src="../images/%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84.png" /></p>
+<h2 id="_3">功能分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在本章节中，我们将展示各模块如何通信以满足用户需求：</p>
+<h3 id="_4">新闻爬取相关<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><img alt="新闻爬取相关" src="../images/%E6%96%B0%E9%97%BB%E7%88%AC%E5%8F%96%E7%9B%B8%E5%85%B3.jpg" /></p>
+<h3 id="_5">新闻展示相关<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><img alt="新闻展示相关" src="../images/%E6%B3%B3%E9%81%93%E5%9B%BE_%E6%96%B0%E9%97%BB%E5%B1%95%E7%A4%BA.png" /></p>
+<h3 id="_6">新闻检索相关<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><img alt="后端索引相关" src="../images/%E5%90%8E%E7%AB%AF%E7%B4%A2%E5%BC%95%E7%9B%B8%E5%85%B3.jpg" /></p>
+<h3 id="_7">用户相关<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><img alt="用户相关" src="../images/%E6%B3%B3%E9%81%93%E5%9B%BE_%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3.png" /></p>
+<h3 id="_8">新闻收藏于新闻摘要<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><img alt="新闻收藏" src="../images/%E6%B3%B3%E9%81%93%E5%9B%BE_%E6%96%B0%E9%97%BB%E6%94%B6%E8%97%8F.png" /></p>
+<p><img alt="新闻摘要" src="../images/%E6%B3%B3%E9%81%93%E5%9B%BE_%E6%96%B0%E9%97%BB%E6%91%98%E8%A6%81.png" /></p>
 
 
 
@@ -728,7 +796,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="上一页: 概述" rel="prev">
+        <a href="../structure/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 需求分析" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -737,20 +805,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              概述
+              需求分析
             </div>
           </div>
         </a>
       
       
         
-        <a href="../implement/" class="md-footer__link md-footer__link--next" aria-label="下一页: 需求实现" rel="next">
+        <a href="../modules/database/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据库设计" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              需求实现
+              数据库设计
             </div>
           </div>
           <div class="md-footer__button md-icon">
